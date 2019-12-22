@@ -1,0 +1,12 @@
+server:
+  port: 8081
+#-----------热部署配置-------------------
+spring:
+  devtools:
+    restart:
+      #热加载生效
+      enabled: true
+      #额外新增的热加载目录
+      additional-paths: src/main/java
+      #热加载排除目录
+      #exclude:
