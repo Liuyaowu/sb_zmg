@@ -10,27 +10,3 @@ spring:
       additional-paths: src/main/java
       #热加载排除目录
       #exclude:
-
-# 1.一个家庭有爸爸、妈妈、孩子
-# 2.这个家庭有一个名字(family-name)叫做:"happy family"
-# 3.爸爸有名字(name)和年龄(age)两个属性
-# 4.妈妈有两个别名
-# 5.孩子除了名字(name)和年龄(age)两个属性还有一个friends的集合
-# 6.每个friend有两个属性:爱好(hobby)和性别(sex)
-family:
-  family-name: "happy \n family" #双引号和单引号的区别:双引号会转义字符,单引号不会,如:"\n"会换行,而'\n'则不会
-  father:
-    name: mobei
-    age: ${random.int} #随机生成一个整数
-  mother:
-    alias:
-      - lovely
-      - alice
-  child:
-    name: jack
-    age: ${family.father.age:5}
-    friends:
-      - hobby: football
-        sex: male
-      - hobby: baseball
-        sex: female
