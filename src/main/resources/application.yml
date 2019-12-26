@@ -1,12 +1,13 @@
-server:
-  port: 8081
-#-----------热部署配置-------------------
+# 指定使用的配置文件环境
+#   持续集成的时候一般不会打开jar包去做修改,而是以命令行的方式指定:java -jar xxx.jar --spring.profiles.active=prod
+#   vm options设置启动参数:-Dspring.profiles.active=prod
+#   Program arguments设置: --spring.profiles.active=prod
+# 优先级:外部(使用命令指定)>内部(程序中指定)  特制(如:application-dev.yml)>泛指(如:application.yml)
+# Spring Boot项目配置文件加载位置(以下从高到低):
+#   -file:./config
+#   -file:./
+#   -classpath:/config
+#   -classpath:/
 spring:
-  devtools:
-    restart:
-      #热加载生效
-      enabled: true
-      #额外新增的热加载目录
-      additional-paths: src/main/java
-      #热加载排除目录
-      #exclude:
+  profiles:
+    active: prod

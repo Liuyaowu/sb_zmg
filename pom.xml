@@ -22,6 +22,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
+            <!-- <optional>true</optional>:当当前项目被其它模块引入时,该依赖就不会被添加进去,降低了jar冲突风险 -->
             <optional>true</optional>
         </dependency>
 
